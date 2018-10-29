@@ -18,17 +18,15 @@ function driverNamesWithRevenueOver(drivers,amount){
   return result
 }
 
+function exactMatch(driverlist, object) {
+  return driverlist.filter( function(driver){
 
-function exactMatch(driverlist, object){
-  return driverlist.filter(function(driver){
-    let same = false
+    for (pair in object){
 
-    for (const stat in object) {
-      same = (driver[stat] === object[stat])
+      return driver[pair]===object[pair]
+
     }
-return same
-  }
-)
+  })
 }
 
 function exactMatchToList(driverlist,object){
